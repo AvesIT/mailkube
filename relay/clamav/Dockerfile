@@ -3,11 +3,6 @@ LABEL maintainer="n.vogels@aves-it.nl"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-
-deb http://deb.debian.org/debian stretch main
-deb http://security.debian.org/debian-security stretch/updates main
-deb http://deb.debian.org/debian stretch-updates main
-
 RUN echo "deb http://deb.debian.org/debian stretch main contrib non-free" > /etc/apt/sources.list \
     && echo "deb http://deb.debian.org/debian stretch-updates main" >> /etc/apt/sources.list \
     && echo "deb http://security.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list \
