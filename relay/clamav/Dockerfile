@@ -11,9 +11,9 @@ RUN echo "deb http://deb.debian.org/debian stretch main contrib non-free" > /etc
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
-RUN wget -O /var/lib/clamav/main.cvd http://database.clamav.net/main.cvd \
-    && wget -O /var/lib/clamav/daily.cvd http://database.clamav.net/daily.cvd \
-    && wget -O /var/lib/clamav/bytecode.cvd http://database.clamav.net/bytecode.cvd \
+RUN curl -o /var/lib/clamav/main.cvd http://database.clamav.net/main.cvd \
+    && curl -o /var/lib/clamav/daily.cvd http://database.clamav.net/daily.cvd \
+    && curl -o /var/lib/clamav/bytecode.cvd http://database.clamav.net/bytecode.cvd \
     && chown clamav:clamav /var/lib/clamav/*.cvd
 
 RUN mkdir /var/run/clamav \
