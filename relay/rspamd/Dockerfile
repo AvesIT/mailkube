@@ -25,11 +25,8 @@ RUN	echo 'type = "console";' > /etc/rspamd/override.d/logging.inc \
 	&& echo 'bind_socket = "*:11334";' > /etc/rspamd/override.d/worker-controller.inc \
 	&& echo 'pidfile = false;' > /etc/rspamd/override.d/options.inc
 
-COPY assets/conf /etc/rspamd
 COPY assets/rsyslog.conf /etc/rsyslog.conf
 COPY assets/run.sh /run.sh
-
-ADD rspamd-config /etc/rspamd/local.d/
 
 RUN chmod 755 /run.sh
 
